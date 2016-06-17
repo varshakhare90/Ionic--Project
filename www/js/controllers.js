@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('userListApp.controllers', [])
 
 .controller('DashCtrl', function($scope) {})
 
@@ -25,4 +25,8 @@ angular.module('starter.controllers', [])
   $scope.settings = {
     enableFriends: true
   };
+})
+
+.controller('newUserCtrl', function($scope) {
+  $scope.pageTitle = "New Profile";
 });
