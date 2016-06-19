@@ -27,6 +27,15 @@ angular.module('userListApp.controllers', [])
   };
 })
 
-.controller('newUserCtrl', function($scope) {
-  $scope.pageTitle = "New Profile";
+.controller('newUserCtrl', function($scope, $firebaseArray, firefactory) {
+    $scope.pageTitle = "New Profile";
+    $scope.saveProfile = function(){
+        $scope.newProfile = firefactory.all;
+        $scope.newProfile.$add({
+            userName: "sankar",
+            userEmail: "sankarnt@yahoo.co.in"
+        });
+        $scope.profileList = $scope.newProfile.$get();
+    };
+
 });
