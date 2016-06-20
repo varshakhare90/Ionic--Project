@@ -31,11 +31,14 @@ angular.module('userListApp.controllers', [])
     $scope.pageTitle = "New Profile";
     $scope.saveProfile = function(){
         $scope.newProfile = firefactory.all;
-        $scope.newProfile.$add({
-            userName: "sankar",
-            userEmail: "sankarnt@yahoo.co.in"
-        });
-        $scope.profileList = $scope.newProfile.$get();
-    };
+        var userData = {
+            "firstName": $scope.userFirstName,
+            "lastName": $scope.userLastName,
+            "userEmail": $scope.userEmailId
+        }
+        $scope.newProfile.$add(userData);
 
+    };
+    $scope.profileList = firefactory.all;
+    console.log($scope.profileList);
 });

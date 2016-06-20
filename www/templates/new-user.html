@@ -1,6 +1,36 @@
 <ion-view view-title={{pageTitle}}>
-  <ion-content>
-    Demo
-    <button type="button" name="button" ng-click="saveProfile();">Click</button>
-  </ion-content>
+    <ion-content>
+        <div class="row" ng-controller="newUserCtrl">
+            <div class="col-50">
+                <h2>New profile?</h2>
+                <div class="list">
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">First Name</span>
+                        <input type="text" placeholder="First Name" ng-model="userFirstName">
+                    </label>
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">Last Name</span>
+                        <input type="text" placeholder="Last Name" ng-model="userLastName">
+                    </label>
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">Email</span>
+                        <input type="text" placeholder="Email" ng-model="userEmailId">
+                    </label>
+                </div>
+                <div class="padding">
+                    <button class="button button button-block button-royal" ng-model="updateProfile" ng-click="saveProfile()">button-balanced</button>
+                </div>
+            </div>
+            <div class="col col-50">
+                <h2>Profile List</h2>
+                <button type="button" name="button" ng-click="saveProfile();">Click</button>
+                <ul class="list">
+                    <li class="item" ng-repeat="user in profileList">
+                        {{user.firstName}}, {{user.lastName}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </ion-content>
 </ion-view>
